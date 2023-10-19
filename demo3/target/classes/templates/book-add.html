@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/bookWithThymeleaf/addSave}" th:object="${bookReqDTO}" method="post">
+    <label for="author">저자</label>
+    <input type="text" th:field="*{author}" id="author" name="author">
+    <span th:if="${#fields.hasErrors('author')}" th:errors="*{author}"></span>
+    <br/>
+    <label for="genre">장르</label>
+    <input type="text" th:field="*{genre}" id="genre" name="genre">
+    <span th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}"></span>
+    <br/>
+    <label for="title">제목</label>
+    <input type="text" th:field="*{title}" id="title" name="title">
+    <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+    <br/>
+    <label for="isbn">isbn</label>
+    <input type="text" th:field="*{isbn}" id="isbn" name="isbn">
+    <span th:if="${#fields.hasErrors('title')}" th:errors="*{isbn}"></span>
+    <br/>
+    <input type="submit" value="등록">
+</form>
+</body>
+</html>

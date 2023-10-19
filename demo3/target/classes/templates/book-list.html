@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>book</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>차례</td>
+        <td>id</td>
+        <td>저자</td>
+        <td>장르</td>
+        <td>isbn</td>
+        <td>제목</td>
+        <td>생성일</td>
+        <td>수정</td>
+        <td>삭제</td>
+    </tr>
+    <tr th:each="book, bState : ${bookList}">
+        <td th:text="${bState.count}"></td>
+        <td th:text="${book.id}"></td>
+        <td th:text="${book.author}"></td>
+        <td th:text="${book.genre}"></td>
+        <td th:text="${book.isbn}"></td>
+        <td th:text="${book.title}"></td>
+        <td th:text="${book.created_at}"></td>
+        <td><a th:href="@{/bookWithThymeleaf/update/{id}(id=${book.id})}">수정</a></td>
+        <td><a th:href="@{/bookWithThymeleaf/delete/{id}(id=${book.id})}">삭제</a></td>
+    </tr>
+</table>
+<a href="/bookWithThymeleaf/add">고객 정보 등록</a>
+
+</body>
+</html>

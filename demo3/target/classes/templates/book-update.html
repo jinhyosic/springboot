@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/bookWithThymeleaf/updatek/{id}(id=${book.id})}" th:object="${book}" method="post">
+    <label for="author">저자</label>
+    <input type="text" th:field="*{author}" id="author" name="author">
+    <span th:if="${#fields.hasErrors('author')}" th:errors="*{author}"></span>
+    <br/>
+    <label for="genre">장르</label>
+    <input type="text" th:field="*{genre}" id="genre" name="genre">
+    <span th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}"></span>
+    <br/>
+    <label for="title">제목</label>
+    <input type="text" th:field="*{title}" id="title" name="title">
+    <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+    <br/>
+    <input type="submit" value="수정">
+</form>
+</body>
+</html>
